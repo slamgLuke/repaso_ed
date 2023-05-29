@@ -1,2 +1,70 @@
 \chapter{}
 
+\section{Ecuaciones No lineales y valores en la frontera }
+
+\section{EDO no lineales}
+\dfn{Ecuaciones no lineales}{
+    Son ecuaciones diferenciales donde :
+    \begin{itemize}
+        \item Al menos una de las derivadas de la variable dependiende o la misma tiene potencia mayor a 1.
+        \item Los coeficientes de las derivadas y la funcion no son constantes o dependen de mas de una variable independiente.
+    \end{itemize}
+}
+
+\nt{Ejemplos de ecuaciones no lineales:
+    \begin{itemize}
+        \item $ 5x\frac{dy}{dx} + y^2 = g(x) $
+        \item $ \frac{d^2y}{dx^2} + (\frac{dy}{dx})^2 + sen(y)  =  10y $
+        \item $ \frac{dy}{dx} + \frac{5}{y}= (cos(x)) $
+    \end{itemize}
+}
+
+\section{Resolucion por frontera}
+\dfn{Valores en la frontera}{
+    Si se tiene la ecuacion de la forma:
+    $$a_{2}(x)\frac{d^2y}{dx^2} + a_{1}(x)\frac{dy}{dx} + a_{0}(x)y = g(x)$$ 
+
+    Es un problema de valores iniciales cuando esta sujeto a:
+    $$ y(x_0) = y_0, \; y'(x_0) = y_1$$
+
+    Por otro lado tambien se puede estar sujeto a :
+
+    $$ y(a) = \gamma_1, \; \space y(b) = \gamma_2$$
+
+    En este caso se dice que es un problema de valores en la frontera,(porque se evaluan diferntes valores que simulan una 
+    \textbf{frontera}).
+}
+
+\section{Ejemplos}
+
+\ex{Ejemplo 1}{
+    $$ y'' + 16y = 0$$
+    $$y(0) = 0, \; y(\frac{\pi}{8}) = 0$$
+
+    Si la solucion es de la forma $y = C_{1}\cos(4x) + C_{2}\sin(4x)$, entonces:
+
+    $$ y(0) \rightarrow C_{1}\cos(0) + C_{2}\sin(0) = 0 \rightarrow C_{1} + C{2}(0) = 0 \rightarrow C_{1} = 0 $$
+    $$ y(\frac{\pi}{8}) \rightarrow C_{1}\cos(\frac{\pi}{2}) + C_{2}\sin(\frac{\pi}{2}) = 0 \rightarrow C_{2}\sin(\frac{\pi}{2}) = 0 \rightarrow C_{2} = 0 $$
+
+
+    Por lo tanto, solo existe una unica solución para este problema de valores en la frontera, y es $y = 0$.
+
+}
+
+Ahora veamos un ejemplo con valores de frontera diferentes:
+
+\ex{Ejemplo 2}{
+    $$ y'' + 16y = 0$$
+    $$y(0) = 0, \; y(\frac{\pi}{2}) = 0$$
+
+    Si la solucion es de la forma $y = C_{1}\cos(4x) + C_{2}\sin(4x)$, entonces:
+
+    $$ y(0) \rightarrow C_{1}\cos(0) + C_{2}\sin(0) = 0 \rightarrow C_{1} + C{2}(0) = 0 \rightarrow C_{1} = 0 $$
+    $$ y(\frac{\pi}{2}) \rightarrow
+     C_{1}\cos(2\pi) + C_{2}\sin(2\pi) = C_1 \rightarrow 0 $$
+
+
+    De acuerdo a este resultado notamos que no eixste ninguna restricción para $C_2$.Por lo tanto, este PVF tiene
+    infinitas soluciones, y son de la forma $y = C_{2}\sin(4x)$.
+}
+

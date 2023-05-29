@@ -1,0 +1,130 @@
+\documentclass{report}
+
+\input{../../template/preamble.tex}
+\input{../../template/macros.tex}
+\input{../../template/letterfonts.tex}
+
+\title{\Huge{Ecuación Auxiliar}}
+\author{\huge{Lucas Carranza}}
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\chapter{}
+\section{Ecuación Auxiliar}
+\dfn{}{\textbf{DEFINICI\'ON:} Se llama ecuación auxiliar a la ecuación característica que se obtiene al reemplazar la función desconocida $(y)$ por una función exponencial $(e^{rx})$. Esta se puede resolver para hallar las raíces que permiten hallar las soluciones particulares.}
+
+\nt{\textbf{Raíces diferentes}
+    
+        Si las raíces de la ecuación auxiliar son diferentes $r_1 \neq r_2 \neq r_3$, entonces la solución general de la ecuación diferencial es:
+        \[
+            y = c_1e^{r_1x} + c_2e^{r_2x} + c_3e^{r_3x}
+        \]
+}
+
+\ex{Resolver la ecuación diferencial $y'' - 3y' + 2y = 0$}{
+    
+    Reemplazamos $y$ por $e^{rx}$:
+    \[
+        (e^{rx})'' - 3(e^{rx})' + 2(e^{rx}) = 0
+    \]
+    \[
+        e^{rx} \cdot (r^2 - 3r + 2) = 0
+    \]
+
+    Simplificamos para quedarnos con la ecuación auxiliar:
+    \[
+        r^2 - 3r + 2 = 0
+    \]
+
+    Obtenemos las raíces:
+    \[
+        r_1 = 1 \qquad r_2 = 2
+    \]
+
+    Finalmente, las soluciones de la ecuación diferencial son:
+    \[
+        y_1 = e^x \qquad y_2 = e^{2x}
+    \]
+
+    \textbf{Solución general:}
+    \[
+        y = c_1e^x + c_2e^{2x}
+    \]
+}
+
+
+\newpage
+\nt{\textbf{Raíces iguales:}
+
+    Si las raíces de la ecuación auxiliar son iguales $r_1 = r_2 = r_3 = r $,
+
+    entonces la solución general de la ecuación diferencial es:
+    \[
+        y = (c_1 + c_2x + c_3x^2 + \dots)e^{rx}
+    \]
+    }
+
+
+\ex{Resolver la ecuación diferencial $y'' - 4y' + 4y = 0$}{
+    
+    Obtenemos la ecuación auxiliar:
+    \[
+        r^2 - 4r + 4 = 0
+    \]
+
+    Obtenemos las raíces:
+    \[
+        r_1 = r_2 = 2
+    \]
+
+    Como son iguales, las soluciones de la ecuación diferencial son:
+    \[
+        y_1 = e^{2x} \qquad y_2 = xe^{2x}
+    \]
+
+    \textbf{Solución general:}
+    \[
+        y = c_1e^{2x} + c_2xe^{2x}
+    \]
+}
+
+
+\nt{\textbf{Raíces complejas:}
+
+    Si las raíces de la ecuación auxiliar son complejas $r_1 = a + bi$, $r_2 = a - bi$,
+
+
+    entonces la solución general de la ecuación diferencial es:
+    \[
+        y = e^{ax}(c_1\cos{bx} + c_2\sin{bx})
+    \]
+}
+
+\ex{Resolver la ecuación diferencial $y'' + 4y' + 5y = 0$}{
+    
+    Obtenemos la ecuación auxiliar:
+    \[
+        r^2 + 4r + 5 = 0
+    \]
+
+    Obtenemos las raíces:
+    \[
+        r_1 = -2 + i \qquad r_2 = -2 - i
+    \]
+
+    Como son complejas, las soluciones de la ecuación diferencial son:
+    \[
+        y_1 = e^{-2x}\cos{x} \qquad y_2 = e^{-2x}\sin{x}
+    \]
+
+    \textbf{Solución general:}
+    \[
+        y = e^{-2x}(c_1\cos{x} + c_2\sin{x})
+    \]
+}
+
+\end{document}

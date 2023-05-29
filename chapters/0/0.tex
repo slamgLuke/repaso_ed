@@ -3,5 +3,155 @@
 \dfn{Ecuación diferencial}{Definimos una \textbf{Ecuación diferencial} como una ecuación que relaciona una función y su variable (o sus variables) con sus derivadas. Además se clasifica por tipo, orden y linealidad.	\\ $\bullet$ La ecuación diferencial más simple es la ecuación diferencial lineal de primer orden: $$\frac{dy}{dx}=f(x,y)$$}
 \qs{}{¿Cuáles son los tipo, orden y linealidad que existen en una ecuación diferencial?}
 \sol Existen ecuaciones diferenciales ordinarias, en derivadas parciales, de primer orden, de segundo orden, de tercer orden, de orden N, lineales y no lineales.
+\nt{El grado de una ecuación diferencial es el grado del polinomio más alto que aparece explícitamente se llama autónoma. en la ecuación diferencial. El orden de una ecuación diferencial es el número de derivadas más alto que aparecen en la ecuación diferencial.}
+\ex{}{
+	\[\frac{dy}{dx} = 0.2xy\]
+	función incógnita: y=y(x). Variable independiente:x
+}
+\ex{}{
+	\[\frac{\partial^2u}{\partial{x^2}} + \frac{\partial^2u}{\partial{t^2}} = e^{tsin(\pi x)}\]
+	función incógnita: u=u(x, t). Variables independientes:x, t
+}
+\ex{}{
+	\[y''' + y' - sin(t)y' - y = te^{-t}\]
+	función incógnita: y=y(t). Variable independiente: t
+}
+\section{Problemas con valores iniciales}
+\dfn{Problemas con valores iniciales}{ Los problemas con valores iniciales son aquellos que se pueden resolver mediante la aplicación de las condiciones iniciales reemplazando en la función de solución derivando si es de ser necesario.}
+
+
+\ex{}{La solución \( y = c_1e^x + c_2e^{-x}\) es una familia de soluciones de la EDO y'' - y = 0. Encuentre el valor de $c_1$ y $c_2$ a partir de las condiciones iniciales y(0) = 1 y y'(0) = 2.
+\begin{center}
+	\textbf{Derivar "y"}
+	\[y = c_1e^x + c_2e^{-x}\Rightarrow y' = c_1e^x-c_2e^{-x}\]
+	\textbf{Evaluar y, y' utilizando las condiciones iniciales}
+	\[y(0) = c_1e^0+c_2e^{-0} = c_1 + c_2 = 1\]
+	\[y'(0) = c_1e^0-c_2e^{-0} = c_1 - c_2 = 2\]
+	\textbf{Determinar los valores de las constantes
+	}
+	\[c_1 + c_2 = 1 \Rightarrow c_1 = 1 - c_2\]
+	\[1-2c_2=2\]
+	\[c_2=-\frac{1}{2} \quad c_1= \frac{3}{2}\]
+\end{center}
+}
+
+\qs{}{La solución \(y = C_1cos(t) + C_2sin(t)\) es una familia de la EDO de segundo orden \(y'' + y = 0\). Encuentre el valor de \(C_1\) y \(C_2\) a partir de las condiciones iniciales \(y(0) = -1 , y'(0) = 8\).}
+
+\sol{\begin{center}
+		\textbf{Derivar "y"}
+		\[y = C_1cos(t) + C_2sin(t)\Rightarrow y' = -C_1sin(t) + C_2cos(t)\]
+		\textbf{Evaluar y, y' utilizando las condiciones iniciales}
+		\[y(0) = C_1cos(0) + C_2sin(0	) = C_1= -1\]
+		\[y'(0) = -C_1sin(0) + C_2cos(0) = C_2 = 8\]
+
+	\end{center}}
+\nt{Hay que tener cuidado al reemplazar la variable en ecuaciones trignonométricas porque podemos tener problemas al operar}
+
+\section{Ecuaciones Diferenciales como modelos matemáticos}
+\dfn{Dinámica poblacional}{
+	La razón de cambio de un país en un momento dado es proporcional a la población total del país en ese momento. En términos matemáticos, si P(t) denota la población en el momento t, el modelo expresa que:
+	\[	\frac{dP}{dt} = kP(t)\]
+	Este modelo no toma en cuenta muchos factores, sirve actualmente para modelar el crecimiento de poblaciones pequeñas.
+}
+\dfn{Decaimiento radioactivo}{
+	En este modelo se supone que la velocidad \(\frac{dA}{dt}\) a la que se desintegran los núcleos de una sustancia es proporcional (más exactamente, al número de núcleos) A(t) de la sustancia que queda en el tiempo t.
+	\[	\frac{dA}{dt} = kA(t)\]
+}
+\dfn{Ley de enfriamiento/calentamiento de Newton}{
+	Si T(t) representa la temperatura de un cuerpo en el instante t, \(T_m\) la temperatura del ambiente y \(\frac{dT}{dt}\) la razón con la cuál la temperatura del cuerpo cambia, entonces
+	\[	\frac{dT}{dt} = k(T(t) - T_m)\]
+	En cualquier caso de este modelo \(k<0\)
+}
+
+\dfn{Propagación de una enfermedad}{
+	Sea x(t) el número de personas contagiadas e y(t) el número de personas aún no contagiadas en el instante t, entonces la ecuación de este fenómeno es:
+	\[	\frac{dx}{dt} = kx(t)y(t)\]
+	Acá tenemos dos variables lo cuál nos complicará la vida. Sin embargo, si n es el número total de personas \(x + y = n\) entonces podemos reescribir la ecuación como:
+	\[	\frac{dx}{dt} = kx(t)(n-x(t))\]
+}
+\dfn{Mezclas}{
+	La mezcla de dos soluciones de distinta concentración da lugar a una ecuación diferencial de primer orden para la cantidad de soluto contenida en la mezcla. Supongamos que inicialmente se tiene un recipiento con \(V\) litros de agua y \(m_0\) kilos de sal diluida totalmente. Además, convengamos que ingresa \(q_{in}\) litros por minutos de otra solución salina de \(S_{in}\) kilos por litro y que de la solución resultante, totalmente diluida, sale \(q_{out}\) litros por minuto. Si A(t) denota la cantidad de sal contenida en el recipiente en el instante "t", la ecuación que rige dicha cantidad está dada por:
+	\[	\frac{dA}{dt} = R_{in} - R_{out}\]
+	\(R_{in}\) y \(R_{out}\) son la razón de entrada y salida de sal, respectivamente. Esta razón se pueden expresar como:
+	\[Rx = (q_x\frac{litros}{minuto})(s_x\frac{kilos}{litros})\]
+}
+\section{Ecuaciones autónomas}
+\dfn{EDO autónoma}{
+	Una ecuación diferencial ordinaria en la que la variable independiente no aparece explícitamente se llama autónoma. Por ejemplo, la ecuación \(y'' + y = 0\) es autónoma, ya que la variable independiente \(t\) no aparece explícitamente. En cambio, la ecuación \(y'' + y = t\) no es autónoma, ya que la variable independiente \(t\) aparece explícitamente.
+}
+\chapter{}
+\section{EDO de variables separadas}
+\dfn{Ecuaciones de variables separadas}{Una EDO de primer orden es de \textbf{variables separadas} si puede ser transformada de manera equivalente a la forma \[\frac{dy}{dx} = f(x)g(y)\] donde f y g son funciones reales de una variable.}
+\ex{}{
+	\[\frac{dx}{dy} = y^2sin(x)e^{2x+5y}\Rightarrow \mbox{Es de variables separadas} \]
+	\[\frac{dy}{dx} = sin(xy^2)\Rightarrow\mbox{No es de variables separadas}\]
+}
+\nt{Otras ecuaciones deben ser manipuladas ligeramente antes de que estén en la forma de variables separadas. Por ejemplo, necesitamos factorizar el lado derecho de \(\frac{dy}{dx}=xy-7x\) para llevarla a la forma deseada: \[\frac{dy}{dx} = (y-7)x\]}
+\noindent{\LARGE{Procedimiento de solución:}
+	\begin{enumerate}
+		\item \textbf{Separar} Las variables
+		\item \textbf{Aplicar} Integrales en ambas partes de la ecuación anterior
+		\item \textbf{Integrar}, la solución general está dada por las antiderivadas, \\es decir,\[G(y) = F(x) + C\]
+	\end{enumerate}
+}
+\pagebreak
+\ex{}{
+	\[\frac{dy}{dx} = f(y)g(x)\Rightarrow \frac{1}{f(y)} = g(x)dx\]
+	\[\int \frac{1}{f(y)} = \int g(x)dx\]
+
+}
+\nt{Redactar más ejercicios resueltos aquí :D}
+
+\section{EDO lineal}
+
+\dfn{EDO lineal}{Sea la la ecuación \[a_1(x)\frac{dy}{dx}+a_0(x)y=g(x)\]Cuando g(x)=0 se dice que la ecuación diferencial es homogénea; de lo contrario es no homogénea \\ Dividiendo la ecuación entre \(a_1\) resulta: \[\frac{dy}{dx} + P(x)y = Q(x)\] Para resolver este tipo de ecuaciones utilizaremos el método de factor integrante}
+\noindent{\LARGE{Procedimiento de solución:}
+	\begin{enumerate}
+		\item \textbf{Identificar} el factor integrante \[u_x = e^{\int P(x)dx}\quad \mbox{se observa que} \quad u' = u(x)P(x)\]
+		\item \textbf{Multiplicar} la ecuacipon por el factor integrante y resolver
+		\item \textbf{Podemos} llegar directamente a la solución conociendo solo el factor integrante \[ y = \frac{1}{u(x)}\int{u(x)Q(x)dx} \]
+	\end{enumerate}
+}
+\nt{Anotar Ejercicios resueltos aquí ;D}
+\chapter{}
+\section{EDO exactas y no exactas}
+
+\dfn{EDO exacta}{Una ecuación diferencial de la forma \[M(x,y)dx + N(x,y)dy = 0\] es exacta si \[ \frac{\partial M(x,y)}{\partial y} = \frac{\partial N(x,y)} {\partial x}\] y la solución esta dada por $f(x,y) = C$}
+
+\ex{}{
+	Resuelva: \[2xydx + (x^2 - 1)dy = 0\]
+	\begin{enumerate}
+		\item \textbf{Identificamos} M(x,y) y N(x,y) \[M(x,y) = 2xy \quad N(x,y) = x^2 - 1\]
+		\item \textbf{Verificamos} si es exacta \[\frac{\partial M(x,y)}{\partial y} = 2x \quad \frac{\partial N(x,y)}{\partial x} = 2x\]
+		\item \textbf{Debido a que} es exacta, existe una función $f(x,y)$ tal que \[f_x(x,y) = M(x,y) \quad f_y(x,y) = N(x,y)\]
+		      \item\textbf{Integramos} la ecuación M(x,y) respecto a x \[f(x,y) = \int M(x,y)dx = \int 2xydx = x^2y + g(y)\]
+		      \item\textbf{Derivamos} la ecuación anterior respecto a y \[f_y(x,y) = x^2 + g'(y) = N(x,y) = x^2 - 1\]
+		\item \textbf{Obtenemos} la solución general \[g'(y) = -1 \Rightarrow g(y) = -y\]
+		\item \textbf{Reemplazando } en la ecuación anterior \[f(x,y) = x^2y - y = C\]
+		      Finalmente, la solución del problema es \[x^2y - y = C\]
+		      En este caso se puede despejar y, \[y = \frac{C}{x^2 - 1}\]
+
+
+	\end{enumerate}
+}
+\dfn{EDO no exacta}{Una ecuación diferencial de la forma \[M(x,y)dx + N(x,y)dy = 0\] es no exacta si \[ \frac{\partial M(x,y)}{\partial y} \neq \frac{\partial N(x,y)} {\partial x}\] En estos casos, el objetivo es buscar un factor integrante $u(x,y)$ tal que al multiplicar por la ecuación inicial se obtenga \[ u(x,y)M(x,y)dx + u(x,y)N(x,y)dy = 0 \] \[ M'(x,y)dx + N'(x,y)dy = 0\] de tal forma que \[
+		\frac{\partial M'}{\partial y} = \frac{\partial  N' }{\partial x}\]}
+\nt{Hay casos en los que u(x,y) depende de ambas variables; sin embargo, los casos donde sólo depende de una variable son los más prácticos.}
+\begin{enumerate}
+	\item \textbf{Primer caso:} Solo depende de x \\ Si la expresión
+	      \[ g = \frac{\frac{\partial M(x,y)}{\partial y}-\frac{\partial N(x,y)}{\partial x}}{N(x,y)}\]
+	      depende solo de x, entonces el factor integrante es \[u(x) = e^{\int g(x)dx}\]
+	\item \textbf{Segundo caso:} Solo depende de y \\ Si la expresión
+	      \[ g = \frac{\frac{\partial M(x,y)}{\partial y}-\frac{\partial N(x,y)}{\partial x}}{M(x,y)}\]
+	      depende solo de y, entonces el factor integrante es \[u(y) = e^{\int g(y)dy}\]
+
+\end{enumerate}
+\nt{Al tener el factor integrante tenemos M'(x,y) y N'(x,y) por lo tanto para resolver la ecuación se resuelve siguiendo los pasos que ya conocemos.}
+
+\section{Modelado y resolución problemas de mezclas}
+\dfn{}{\[\frac{dA}{dt} = (\frac{\mbox{Razón de }}{\mbox{entrada}})-(\frac{\mbox{Razón de}}{\mbox{salida}})\] Razón de entrada \[R_{in} = \mbox{Concentración de entrada} \times \mbox{Caudal de entrada}\] Razón de salida \[R_{out} = \mbox{Concentración de salida} \times \mbox{Caudal de salida}\] La concentración es masa/volumen y el caudal es volumen/tiempo \\ Si el volumen es constante se resuelve por variables separadas y sino se resuelve por factor integrante.}
+\nt{En este tipo de problemas se tiene un tanque con una solución inicial y se le agrega una solución con una concentración diferente. El objetivo es encontrar la función de cantidad de soluto de la solución final.}
+
+
 
 

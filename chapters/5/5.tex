@@ -1,0 +1,43 @@
+\chapter{}
+
+\section{Dependencia e independencia lineal}
+
+\dfn{Funciones linealmente independientes}{
+    Un conjunto de funciones es linealmente independiente (LI) si cuando:
+    $$ C_{1}f_{1}(x) + C_{2}f_{2}(x) + \cdots + C_{n}f_{n}(x) = 0 $$
+
+    entonces que c1 = c2 = · · · = cn = 0.
+}
+
+\nt{Si el conjunto no es linelamente independiente, entonces es linealmente \textbf{dependiente}}
+
+\ex{}{
+    Las funciones:
+    $$ f_1 = x^{\frac{1}{2}} + 5 $$
+    $$ f_2 = x^{\frac{1}{2}} + 5x $$
+    $$ f_3 = x - 1 $$
+    $$ f_4 = x^{2} $$
+
+    son linealmente independientes en el intervalo $[0, \infty)$. En efecto:
+    $$ 1f_1 - 1f_2 + 5f_3 + 0f_4 = 0 $$
+}
+
+\section{Wronskiano}
+\dfn{}{
+    El Wronskiano es la determinante de una matriz cuadrada la cual contiene las funciones y sus derivadas.
+
+    $$ W(f_1, f_2, \cdots, f_n) = 
+    \begin{vmatrix}
+        f_1 & f_2 & \cdots & f_n \\
+        f_1' & f_2' & \cdots & f_n' \\
+        \vdots & \vdots & \ddots & \vdots \\
+        f_1^{(n-1)'} & f_2^{(n-1)'} & \cdots & f_n^{(n-1)'}
+    \end{vmatrix} $$
+
+    Si y solo si el resultado \textbf{NO} es igual a 0, entonces las funciones son linealmente independientes.
+}
+
+\dfn{Conjunto fundamental de soluciones}{
+    Todo conjunto $y1(x), y2(x), . . . , yn(x)$ de $n$ soluciones linealmente independientes 
+    de una EDO homogénea de n-ésimo orden se llama conjunto fundamental de soluciones.
+}

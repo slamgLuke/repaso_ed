@@ -17,24 +17,56 @@
 \section{Coeficientes indeterminados - Método del operador anulador}
 \dfn{}{\textbf{Operador anulador:} Es un operador diferencial que al ser aplicado a una función, la vuelve 0.}
 
+\subsection{Tabla de operadores anuladores}
 
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{f(x)} & \textbf{Operador anulador} \\
+\hline
+$x^n$ & $D^{n+1}$\\
+\hline
+$\sin(ax)$ & $(D^2+a^2)$ \\
+\hline
+$\cos(ax)$ & $(D^2+a^2)$ \\
+\hline
+$\cos(ax)e^{bx}$ & $(D^2-2abD+(a^2+b^2))$ \\
+\hline
+$x^n\sin(ax)e^{bx}$ & $( D^2-2abD+(a^2+b^2) )^{n+1}$ \\
+\hline
+$e^{ax}$ & $(D-a)$ \\
+\hline
+$x^n e^{ax}$ & $(D-a)^{n+1}$ \\
+\hline
+\end{tabular}
+\end{center}
 
+\subsection{Método}
 
 \dfn{}{\textbf{Método del operador anulador:} Es un método para resolver ecuaciones diferenciales no homogéneas. Consiste en encontrar un operador anulador que al ser aplicado a la ecuación diferencial, la vuelve homogénea (se anula la parte no-homogénea). Luego, se resuelve la ecuación homogénea y se obtiene la solución general.}
+
+\nt{\textbf{No hace falta} que la ecuación esté en la forma estándar.}
 
 \subsection{Pasos}
 
 \begin{enumerate}
+    \item Identificar el operador anulador correspondiente a la parte no-homogénea $f(x)$.
 
+    \item Aplicar el operador anulador de $f(x)$ a ambos lados de la ecuación diferencial.
+
+    \item Obtener las raíces del polinomio característico (donde $D$ es la incógnita).
+
+    \item Obtener la solución particular de la ecuación no-homogénea.
+
+    \item Obtener la solución general de la ecuación homogénea.
+
+
+    \item Sumar la solución particular con la solución general, omitiendo las soluciones duplicadas de la solución particular que ya estén en la homogénea [FIN].
 \end{enumerate}
-
-\nt{\textbf{No hace falta} que la ecuación esté en la forma estándar.}
-
-\subsection{}
 
 
 \subsection{Ejemplo polinomial}
-\ex{Resuelva la ecuación diferencia: $y'' $}{
+\ex{Resuelva la ecuación diferencial: $y'' $}{
 
 }
 

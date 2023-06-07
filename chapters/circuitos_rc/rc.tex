@@ -1,0 +1,90 @@
+\documentclass{report}
+\input{~/tex/preamble.tex}
+\input{~/tex/macros.tex}
+\input{~/tex/letterfonts.tex}
+\usepackage{multicol}
+
+\author{Lucas Carranza}
+\title{Circuitos RLC 2}
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+
+\chapter{}
+
+\begin{multicols}{2}
+[
+\section{Datos nuevos}
+]
+\dfn{$\omega_0$}{
+    Frecuencia de resonancia. ($rad/s$)
+    \[\omega_0 = \frac{1}{\sqrt{LC}}\]
+    \[\omega_0^2 = \frac{1}{LC}\]
+}
+\dfn{$f$}{
+    Frecuencia de oscilación. ($Hz$)
+    \[f = \frac{\omega_0}{2\pi}\]
+    \[f = \frac{1}{2\pi\sqrt{LC}}\]
+}
+\end{multicols}
+
+\nt{
+    \begin{itemize}
+        \item $L$ es la inductancia/bobina en \textit{Henrys}. 
+        \item $C$ es el capacitor en \textit{Farads}.
+    \end{itemize}
+}
+
+\section{Ecuación diferencial - CIRCUITO RC}
+\thm{La ecuación diferencial de un sistema RC es}{
+    \[LQ(t)'' + \frac{1}{C}Q(t) = 0\]
+
+    Dividimos entre $L$ para dejarlo en forma estándar:
+    \[Q(t)'' + \frac{1}{LC}Q(t) = 0\]
+
+    Como sabemos que $\omega_0^2 = \frac{1}{LC}$, podemos escribir:
+    \[Q(t)'' + \omega_0^2Q(t) = 0\]
+}
+
+\subsection{Solución general}
+\[r^2 + \omega_0^2 = 0\]
+\[r^2 = -\omega_0^2\]
+\[r = 0 \pm i\omega_0\]
+
+\nt{
+    La solución general de la ecuación diferencial es:
+    \[Q(t) = c_1\cos(\omega_0t) + c_2\sin(\omega_0t)\]
+}
+
+\section{Ecuación diferencial - CIRCUITO RLC}
+\thm{}{
+    Al añadir una resistencia $R$, se tiene una ecuación de amortiguamiento.
+    La energía se disipa lentamente en forma de calor.
+    \[LQ(t)'' + RQ(t)' + \frac{1}{C}Q(t) = 0\]
+
+    Dividimos entre $L$ para dejarlo en forma estándar:
+    \[Q(t)'' + \frac{R}{L}Q(t)' + \omega_0^2(t) = 0\]
+}
+
+\subsection{Amortiguamiento crítico}
+\[r^2 + \frac{R}{L}r + \frac{1}{LC} = 0\]
+\[r = \cfrac{-\cfrac{R}{L} \pm \sqrt{\Delta}}{2}\]
+
+\nt{
+    \begin{itemize}
+        \item Para que sea sub-amortiguado, $\Delta < 0$. 
+        \item Para que sea sobre-amortiguado, $\Delta > 0$.
+        \item Para que sea críticamente amortiguado, $\Delta = 0$.
+    \end{itemize}
+}
+
+\[\Delta = \left(\frac{R}{L}\right)^2 - 4\frac{1}{LC} < 0\]
+\[\frac{R^2}{L^2} < \frac{4}{LC}\]
+\[R < 2\sqrt{\frac{L}{C}}\]
+
+
+\end{document}
